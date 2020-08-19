@@ -1,0 +1,65 @@
+{% extends 'base/base.html' %} 
+{% load static %} 
+{% block content %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+
+<div class="card">
+    <div class="card-header"><strong>Search</strong></div>
+    <div class="card-body">
+        <form class="form" action="" method="post">
+            <div class="form-group mx-sm-3 mb-2">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col">
+                        {{ std_search_forms.as_p }}
+                    </div>
+                </div>
+            </div>
+    </div>
+            <div class="card-footer">
+                <button class="btn btn-sm btn-outline-success" type="submit">Search</button>
+            </div>
+        </form>
+</div>
+
+
+<br />
+<br />
+
+    <div class="card">
+        <div class="card-header"><strong>Student List</strong></div>
+        <div class="card-body">
+            <table class="table table-responsive-sm table-striped">
+                <thead>
+                    <tr>
+                        <th>Student roll</th>
+                        <th>Student name</th>
+                        <th>Class</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for student in studentl %}
+                    <tr>
+                        <td class="cls_roll">{{ student.roll }}</td>
+                        <td>{{ student.student.name }}</td>
+                        <td class="cls_class">{{ student.class_id.classname }}</>
+                        <td>
+                            <a class="btn btn-primary btn_class" href="#" role="button">Present</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </div>
+    </div>
+    {% endblock %}
+</div>

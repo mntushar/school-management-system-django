@@ -1,0 +1,85 @@
+{% load static %}
+<div class="sidebar">
+    <nav class="sidebar-nav">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}"><i class="icon-speedometer"></i> Dashboard</a>
+            </li>
+
+            <li class="nav-item nav-dropdown">
+                <a class="nav-link nav-dropdown-toggle" href="#">
+                    <i class="nav-icon icon-puzzle"></i> Adminstration</a>
+                <ul class="nav-dropdown-items">
+
+                    <li class="nav-item">
+
+                        <li class="nav-item nav-dropdown">
+                            <a class="nav-link nav-dropdown-toggle" href="#">
+                                <i class="nav-icon icon-puzzle"></i> Teacher</a>
+                            <ul class="nav-dropdown-items">
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'teacherlist-site' %}">
+                                        <i class="nav-icon icon-puzzle"></i> Teacher list</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'addteacher-site' %}">
+                                        <i class="nav-icon icon-puzzle"></i> Add Teacher</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item nav-dropdown">
+                            <a class="nav-link nav-dropdown-toggle" href="#">
+                                <i class="nav-icon icon-puzzle"></i> Employ</a>
+                            <ul class="nav-dropdown-items">
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'create-employee-site' %}">
+                                        <i class="nav-icon icon-puzzle"></i>Create sub admin</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'employeelist-site' %}">
+                                        <i class="nav-icon icon-puzzle"></i>Sub admin list</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item nav-dropdown">
+                            <a class="nav-link nav-dropdown-toggle" href="#">
+                                <i class="nav-icon icon-puzzle"></i> Student</a>
+                            <ul class="nav-dropdown-items">
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'studentlist-site' %}">
+                                        <i class="nav-icon icon-puzzle"></i> Student list</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'addstudent-site' %}">
+                                        <i class="nav-icon icon-puzzle"></i> Add Student</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'attendance-site' %}">
+                                        <i class="nav-icon icon-puzzle"></i>Attendance</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                    </li>
+
+                </ul>
+            </li>
+
+        </ul>
+    </nav>
+    <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+
+    {% block sidebar %} {% endblock %}
+</div>
